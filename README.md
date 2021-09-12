@@ -5,7 +5,7 @@ Wikipedia cross language biased sentence detection
 The method of datasets creating is based on https://github.com/crim-ca/wiki-bias. We coded pre-processing and sentencizer function for Chinese, it can be accessd by using **normalize.py**, **diff.py** and **nlp.py** instead of original files.  
 All datasets including three version, which are balance by unchanged sentences, unbalance and balance by text argumentation are provided in [datasets](https://github.com/Gridnn/summer-project/tree/main/datasets).
 ### For model detecting
-The code of generating current Wikipedia pages is reported in [current_page_generator].ipynb(https://github.com/Gridnn/summer-project/blob/main/current_page_generator.ipynb).  
+The code of generating current Wikipedia pages is reported in [current_page_generator.ipynb](https://github.com/Gridnn/summer-project/blob/main/current_page_generator.ipynb).  
 The maps of qid and pid of the articles are provided in foler [wiki_pid_qid_map](https://github.com/Gridnn/summer-project/tree/main/wiki_pid_qid_map). It can be used to find the articles appearing in both languages, which is reported in [example.ipynb](https://github.com/Gridnn/summer-project/blob/main/example.ipynb).
 
 
