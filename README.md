@@ -36,7 +36,7 @@ python3 BERT_HPSearch.py -tr <train_file> -d <dev_file> -te <text_file> -l <xx>
 ```
 
 ### 3. Detection
-The detection results for all 9 BERT models, and 1 fastText classification models are provided in folder [detection result](https://github.com/Gridnn/summer-project/tree/main/detection%20result). The results are saved in list. The biased sentence is represented by 1, and neutral sentence is represented by 0. It can be read by coding:
+The detection results for all 9 BERT models, and 1 fastText classification model in each language are provided in folder [detection result](https://github.com/Gridnn/summer-project/tree/main/detection%20result). The results are saved in list. The biased sentence is represented by 1, and neutral sentence is represented by 0. It can be read by coding:
 ```
 import pickle
 with open("/detection result/bg/application1.0_bg.txt", "rb") as fp:   # Unpickling
