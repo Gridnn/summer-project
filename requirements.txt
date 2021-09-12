@@ -1,0 +1,4 @@
+fasttext
+transformers==4.7.0
+ray[default]
+ray[tune]
