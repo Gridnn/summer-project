@@ -1,3 +1,5 @@
+import sys
+import argparse
 import pandas as pd
 import itertools
 import torch
@@ -29,7 +31,7 @@ def compute_metrics(pred):
 
 def model_init():
     return BertForSequenceClassification.from_pretrained(
-        model_name,  # Use the 12-layer BERT model, with an uncased vocab.
+        'bert-base-multilingual-cased',  # Use the 12-layer BERT model, with an uncased vocab.
         num_labels=2,  # The number of output labels--2 for binary classification.
         # You can increase this for multi-class tasks.
         output_attentions=False,  # Whether the model returns attentions weights.
@@ -64,7 +66,7 @@ class Dataset(torch.utils.data.Dataset):
     def __getitem__(self, idx):
         item = {key: torch.tensor(val[idx]) for key, val in self.encodings.items()}
         if self.labels:
-        item["labels"] = torch.tensor(self.labels[idx])
+          item["labels"] = torch.tensor(self.labels[idx])
         return item
 
     def __len__(self):
@@ -105,11 +107,10 @@ def main(argv):
     # Get the lists of sentence1, sentence2 and their labels.
     df_sentence = df.sentence.values
     df_labels = df.label.values
-
     # Hugging Face Trainer
-    if args.lang = 'zh':
+    if args.lang == 'zh':
       model_name = 'bert-base-chinese'
-    elif args.lang = 'bg':
+    else:
       model_name = 'bert-base-multilingual-cased'
 
     tokenizer = BertTokenizer.from_pretrained(model_name)
@@ -156,3 +157,6 @@ def main(argv):
                                          backend="ray")
 
     print(best_run)
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
